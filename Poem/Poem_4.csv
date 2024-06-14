@@ -1,23 +1,9 @@
-corpus_id,document_id,sentence_id,content,
-PoemBO,1,1,From childhood's hour I have not been,
-PoemBO,1,2,As others were -- I have not seen,
-PoemBO,1,3,As others saw -- I could not bring,
-PoemBO,1,3,My passions from a common spring --,
-PoemBO,1,4,From the same source I have not taken, while they sucked;
-PoemBO,1,5,My sorrow -- I could not awaken,
-PoemBO,1,6,My heart to joy at the same tone --,
-PoemBO,1,7,And all I lov'd -- I lov'd alone --,
-PoemBO,1,8,Then -- in my childhood -- in the dawn,
-PoemBO,1,9,Of a most stormy life -- was drawn,
-PoemBO,1,10,From ev'ry depth of good and ill,
-PoemBO,1,11,The mystery which binds me still --,
-PoemBO,1,12,"From the torrent, or the fountain --",
-PoemBO,1,13,From the red cliff of the mountain --,
-PoemBO,1,14,From the sun that 'round me roll'd,
-PoemBO,1,15,In its autumn tint of gold --,
-PoemBO,1,16,From the lightning in the sky,
-PoemBO,1,17,As it pass'd me flying by --,
-PoemBO,1,18,"From the thunder, and the storm --",
-PoemBO,1,19,And the cloud that took the form,
-PoemBO,1,20,(When the rest of Heaven was blue),
-PoemBO,1,21,Of a demon in my view --,
+corpus_id,document_id,sentence_id,content
+PoemBO,3,1,Is the moon Tired? She look so pale
+PoemBO,3,2,Within her misty veil
+PoemBO,3,3,She scales the sky from east to west,
+PoemBO,3,4,And takes no rest
+PoemBO,3,5,Before the coming of the night
+PoemBO,3,6,The moon shows papery white;
+PoemBO,3,7,Before the dawning of the day
+PoemBO,3,8,She fades away

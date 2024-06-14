@@ -1,302 +1,137 @@
-@prefix amr: <http://www.ontologydesignpatterns.org/ont/amr/> .
-@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
-@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
-@prefix dbpedia: <http://dbpedia.org/resource/> .
-@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
-@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
-@prefix fschema: <https://w3id.org/framester/schema/> .
-@prefix ns3: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
-@prefix ns4: <amrb:> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix va: <http://verbatlas.org/> .
-@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
-@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
-
-# Existing Entities and Classes from the KG
-fred:be-from_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/be-from-91> ;
-    ns3:be-from-91.entity fred:cliff_1 ;
-    ns3:be-from-91.source fred:rainbow_1 .
-
-fred:be-from_3 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/be-from-91> ;
-    vn.role:Time fred:conjunct_4 ;
-    ns3:be-from-91.entity fred:cloud_1 ;
-    ns3:be-from-91.source fred:lightning_1 .
-
-fred:bind_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/bind-01> ;
-    vn.role:Time fred:still_1 ;
-    ns3:bind-01.attacher fred:mystery_1 ;
-    ns3:bind-01.thing-bound fred:person_1 .
-
-fred:conjunct_1 a boxing:Conjunct ;
-    dul:hasMember fred:possible_1,
-        fred:possible_2,
-        fred:possible_3 .
-
-fred:conjunct_2 a boxing:Conjunct ;
-    dul:hasMember fred:draw_1,
-        fred:love_1 .
-
-fred:conjunct_3 a boxing:Conjunct ;
-    dul:hasMember fred:be-from_1,
-        fred:have_1 .
-
-fred:good_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/good-02> ;
-    ns3:good-02.generally-positive-entity fred:mystery_1 .
-
-fred:have-degree_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/have-degree-91> ;
-    ns3:have-degree-91.attribute fred:storm_1 ;
-    ns3:have-degree-91.degree-itself fred:most_1 ;
-    ns3:have-degree-91.domain fred:life_1 .
-
-fred:ill_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/ill-02> ;
-    ns3:ill-02.entity-described-as-poor fred:mystery_1 .
-
-fred:possible_4 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/possible-01> ;
-    boxing:hasTruthValue boxing:False ;
-    vn.role:Time fred:then_2 ;
-    ns3:possible-01.thing-that-is-possible fred:awake_1 .
-
-fred:red_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/red-02> ;
-    ns3:red-02.red-entity fred:cliff_1 .
-
-fred:resemble_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> ;
-    ns3:resemble-01.copy fred:possible_1 ;
-    ns3:resemble-01.original fred:see_1 .
-
-fred:resemble_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> ;
-    ns3:resemble-01.copy fred:have_1 ;
-    ns3:resemble-01.original fred:see_2 .
-
-fred:roll_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/roll-01> ;
-    vn.role:Destination fred:person_2 ;
-    ns3:roll-01.thing-rolled-or-rolling fred:sun_1 .
-
-fred:same_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/same-01> ;
-    ns3:same-01.first-same-thing fred:source_1 .
-
-fred:same_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/same-01> ;
-    ns3:same-01.first-same-thing fred:tone_1 .
-
-fred:see_3 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/see-01> ;
-    ns3:see-01.thing-viewed fred:form_2 ;
-    ns3:see-01.viewer fred:person_2 .
-
-fred:share_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/share-01> ;
-    ns3:share-01.thing-shared fred:spring_1 .
-
-fred:tint_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tint-01> ;
-    vn.role:Time fred:date-entity_1 ;
-    ns3:tint-01.the-color-itself fred:gold_1 ;
-    ns3:tint-01.thing-with-color fred:sun_1 .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix implica: <http://www.ontologydesignpatterns.org/ont/implicature/implicature.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-fred:Alone rdfs:subClassOf dul:Quality,
-        wn30:supersense-adv_all ;
-    owl:equivalentClass wn30:synset-entirely-adverb-2 .
+### Entities ###
+ex:TheSun a ex:CelestialBody ;
+    ex:hasFrame ex:DailyOccurrence ;
+    ex:risesIn ex:East ;
+    ex:occursAt "every morning"^^xsd:string ;
+    ex:hasImplicature ex:signalsBeginningOfDay ;
+    ex:hasImplicature ex:providesWarmthAndLight .
 
-fred:Cliff rdfs:subClassOf d0:Location,
-        wn30:supersense-noun_object ;
-    owl:equivalentClass wn30:synset-cliff-noun-1 .
+ex:East a ex:Directionality ;
+    ex:locatedOn ex:Horizon ;
+    ex:hasImplicature ex:symbolizesRenewalAndHope ;
+    ex:hasImplicature ex:marksEndOfDarkness .
 
-fred:Devil a amr:Person ;
-    owl:sameAs dbpedia:Devil,
-        wd:Q6674 .
+### Frames and Concepts ###
+ex:DailyOccurrence a ex:Frame .
 
-fred:Fountain rdfs:subClassOf d0:Location,
-        wn30:supersense-noun_object ;
-    owl:equivalentClass wn30:synset-spring-noun-3 .
+ex:Directionality a ex:Frame .
 
-fred:Gold rdfs:subClassOf d0:Characteristic,
-        wn30:supersense-noun_attribute ;
-    owl:equivalentClass wn30:synset-gold-noun-5 .
+### Time ###
+ex:everyMorning a ex:Regularity ;
+    ex:atTimeOfDay ex:Dawn ;
+    ex:hasImplicature ex:setsPredictableRhythm ;
+    ex:hasImplicature ex:reflectsEarthsRotation .
 
-fred:Heart rdfs:subClassOf dul:Description,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-kernel-noun-3 .
+ex:Dawn a ex:TimeOfDay .
 
-fred:Joy rdfs:subClassOf dul:Situation,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-joy-noun-2 .
+### Additional Implicatures ###
+ex:providesWarmthAndLight a ex:Benefit ;
+    ex:hasImplicature ex:supportsPhotosynthesis ;
+    ex:hasImplicature ex:affectsClimateAndWeatherPatterns .
 
-fred:Life rdfs:subClassOf d0:Characteristic,
-        wn30:supersense-noun_attribute ;
-    owl:equivalentClass wn30:synset-liveliness-noun-2 .
+ex:symbolizesRenewalAndHope a ex:Symbolism ;
+    ex:hasImplicature ex:culturalSignificance ;
+    ex:hasImplicature ex:inspiresArtisticExpressions .
 
-fred:Lightning rdfs:subClassOf d0:Event,
-        wn30:supersense-noun_phenomenon ;
-    owl:equivalentClass wn30:synset-lightning-noun-1 .
+ex:setsPredictableRhythm a ex:Timekeeping ;
+    ex:hasImplicature ex:influencesCircadianRhythms ;
+    ex:hasImplicature ex:usedForAgriculturalPlanning .
 
-fred:Most rdfs:subClassOf dul:Quality,
-        wn30:supersense-adv_all ;
-    owl:equivalentClass wn30:synset-most-adverb-1 .
+### Relationships ###
+ex:risesIn rdf:type owl:ObjectProperty ;
+    rdfs:label "rises in" .
 
-fred:Mountain rdfs:subClassOf dul:Amount,
-        wn30:supersense-noun_quantity ;
-    owl:equivalentClass wn30:synset-batch-noun-2 .
+ex:locatedOn rdf:type owl:ObjectProperty ;
+    rdfs:label "located on" .
 
-fred:Mystery rdfs:subClassOf dul:Situation,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-mystery-noun-1 .
+ex:hasFrame rdf:type owl:ObjectProperty ;
+    rdfs:label "has frame" .
 
-fred:Neanderthal a amr:Person .
+ex:occursAt rdf:type owl:ObjectProperty ;
+    rdfs:label "occurs at" .
 
-fred:Passion rdfs:subClassOf d0:Quality,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-passion-noun-2 .
+ex:atTimeOfDay rdf:type owl:ObjectProperty ;
+    rdfs:label "at time of day" .
 
-fred:Person rdfs:subClassOf dul:PhysicalObject,
-        wn30:supersense-noun_person ;
-    owl:equivalentClass wn30:synset-individual-noun-1 .
+ex:hasImplicature rdf:type owl:ObjectProperty ;
+    rdfs:label "has implicature" .
 
-fred:Rainbow rdfs:subClassOf d0:Weather,
-        wn30:supersense-noun_phenomenon ;
-    owl:equivalentClass wn30:synset-rainbow-noun-1 .
+### Symbolic Types ###
+ex:CelestialBody implica:symbolictype ex:Frame ;
+    rdfs:label "Celestial Body" .
 
-fred:Rest rdfs:subClassOf d0:Quality,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-ease-noun-3 .
+ex:Frame implica:symbolictype ex:owl:Class ;
+    rdfs:label "Frame" .
 
-fred:Source rdfs:subClassOf dul:Entity,
-        wn30:supersense-noun_animal ;
-    owl:equivalentClass wn30:synset-source-noun-2 .
+ex:Directionality implica:symbolictype ex:Frame ;
+    rdfs:label "Directionality" .
 
-fred:Storm rdfs:subClassOf dul:Description,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-disturbance-noun-1 .
+ex:Regularity implica:symbolictype ex:Frame ;
+    rdfs:label "Regularity" .
 
-fred:Time rdfs:subClassOf dul:Quality,
-        wn30:supersense-noun_cognition ;
-    owl:equivalentClass wn30:synset-time-noun-4 .
+ex:TimeOfDay implica:symbolictype ex:Frame ;
+    rdfs:label "Time of Day" .
 
-fred:Weather rdfs:subClassOf d0:Phenomenon,
-        wn30:supersense-noun_object ;
-    owl:equivalentClass wn30:synset-weather-noun-1 .
+ex:Benefit implica:symbolictype ex:Frame ;
+    rdfs:label "Benefit" .
 
-fred:awake_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/awake-01> ;
-    vn.role:Time fred:then_1 ;
-    ns3:awake-01.time-when-awake fred:rainbow_1 .
+ex:Symbolism implica:symbolictype ex:Frame ;
+    rdfs:label "Symbolism" .
 
-fred:be-from_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/be-from-91> ;
-    ns3:be-from-91.entity fred:rainbow_1 ;
-    ns3:be-from-91.source fred:cliff_1 .
+ex:Timekeeping implica:symbolictype ex:Frame ;
+    rdfs:label "Timekeeping" .
 
-fred:cliff_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/cliff-91> ;
-    ns3:cliff-91.location fred:rainbow_1 .
+ex:Horizon implica:symbolictype ex:Directionality ;
+    rdfs:label "Horizon" .
 
-fred:cloud_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/cloud-91> ;
-    ns3:cloud-91.sky fred:lightning_1 .
+ex:East implica:symbolictype ex:Directionality ;
+    rdfs:label "East" .
 
-fred:date-entity_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/date-entity-91> ;
-    ns3:date-entity-91.date-when-referred fred:storm_1 .
+### Violations of Grice's Maxims ###
+ex:v1 a implica:Violation ;
+    implica:maxim implica:Maxim ;
+    implica:symbol ex:symbolizesRenewalAndHope ;
+    implica:symbolictype ex:Symbolism ;
+    implica:literalentity ex:providesWarmthAndLight ;
+    implica:motivation "The violation is motivated by highlighting the cultural and artistic significance associated with renewal and hope, inspiring artistic expressions."^^xsd:string .
 
-fred:draw_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/draw-91> ;
-    ns3:draw-91.author fred:then_1 ;
-    ns3:draw-91.drawer fred:storm_1 .
+ex:v2 a implica:Violation ;
+    implica:maxim implica:Maxim ;
+    implica:symbol ex:symbolizesRenewalAndHope ;
+    implica:symbolictype ex:Symbolism ;
+    implica:literalentity ex:setsPredictableRhythm ;
+    implica:motivation "The violation is motivated by emphasizing the influence on circadian rhythms and agricultural planning, linking renewal and hope to natural cycles."^^xsd:string .
 
-fred:have_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/have-91> ;
-    ns3:have-91.entity fred:source_1 ;
-    ns3:have-91.owner fred:rainbow_1 .
+### Maxims ###
+implica:Maxim rdf:type owl:Class ;
+    rdfs:label "Maxim" .
 
-fred:lightning_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/lightning-91> ;
-    ns3:lightning-91.cloud fred:source_1 .
+### Relationships for Violations ###
+implica:maxim rdf:type owl:ObjectProperty ;
+    rdfs:label "maxim" .
 
-fred:lightning_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/lightning-91> ;
-    ns3:lightning-91.lightning-bolt fred:source_1 .
+implica:symbol rdf:type owl:ObjectProperty ;
+    rdfs:label "symbol" .
 
-fred:love_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/love-91> ;
-    ns3:love-91.lover fred:then_1 ;
-    ns3:love-91.person-loved fred:awake_1 .
+implica:symbolictype rdf:type owl:ObjectProperty ;
+    rdfs:label "symbolic type" .
 
-fred:most_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/most-01> ;
-    vn.role:Time fred:then_1 ;
-    ns3:most-01.domain fred:person_1 .
+implica:literalentity rdf:type owl:ObjectProperty ;
+    rdfs:label "literal entity" .
 
-fred:mountain_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mountain-91> ;
-    ns3:mountain-91.peak fred:form_2 .
+implica:motivation rdf:type owl:DatatypeProperty ;
+    rdfs:label "motivation" .
 
-fred:mystery_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mystery-91> ;
-    ns3:mystery-91.thing-mysterious fred:storm_1 .
+### Additional Object Properties from the KG ###
+ex:subsumedUnder rdf:type owl:ObjectProperty ;
+    rdfs:label "subsumed under" .
 
-fred:passion_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/passion-91> ;
-    ns3:passion-91.lover fred:love_1 ;
-    ns3:passion-91.thing-loved fred:form_2 .
-
-fred:person_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/person-91> ;
-    ns3:person-91.identity fred:cloud_1 .
-
-fred:person_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/person-91> ;
-    ns3:person-91.person fred:form_2 .
-
-fred:possible_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/possible-01> ;
-    boxing:hasTruthValue boxing:False ;
-    vn.role:Time fred:then_1 ;
-    ns3:possible-01.thing-that-is-possible fred:awake_1 .
-
-fred:possible_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/possible-01> ;
-    boxing:hasTruthValue boxing:True ;
-    vn.role:Time fred:then_1 ;
-    ns3:possible-01.thing-that-is-possible fred:rainbow_1 .
-
-fred:possible_3 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/possible-01> ;
-    boxing:hasTruthValue boxing:False ;
-    vn.role:Time fred:then_1 ;
-    ns3:possible-01.thing-that-is-possible fred:awake_1 .
-
-fred:possible_5 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/possible-01> ;
-    boxing:hasTruthValue boxing:True ;
-    vn.role:Time fred:then_1 ;
-    ns3:possible-01.thing-that-is-possible fred:storm_1 .
-
-fred:rainbow_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rainbow-91> ;
-    ns3:rainbow-91.rainbow fred:cloud_1 .
-
-fred:rest_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-91> ;
-    ns3:rest-91.people fred:rainbow_1 .
-
-fred:see_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/see-91> ;
-    ns3:see-91.look fred:form_2 ;
-    ns3:see-91.seer fred:person_2 .
-
-fred:see_2 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/see-91> ;
-    ns3:see-91.look fred:source_1 ;
-    ns3:see-91.seer fred:form_2 .
-
-fred:storm_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/storm-91> ;
-    ns3:storm-91.typhoon fred:form_2 .
-
-fred:stormy_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/stormy-91> ;
-    ns3:stormy-91.sea fred:cliff_1 .
-
-fred:sun_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/sun-91> ;
-    ns3:sun-91.sun fred:form_2 .
-
-fred:tone_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tone-91> ;
-    ns3:tone-91.tone fred:awake_1 .
-
-fred:tonight_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tonight-91> ;
-    vn.role:Time fred:then_1 ;
-    ns3:tonight-91.thing-to-occur fred:rainbow_1 .
-
-fred:truly_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/truly-91> ;
-    ns3:truly-91.truth-value fred:rainbow_1 .
-
-fred:weird_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/weird-91> ;
-    ns3:weird-91.oddity fred:cliff_1 .
-
-fred:Being a amr:Actor .
-
-fred:Has a amr:Entity .
-
-fred:Named a amr:Label .
-
-fred:See a amr:PhysicalProperty .
-
-fred:Think a amr:Agent .
-
-fred:be a amr:time-of-day .
-
-fred:of a amr:place .
-
-fred:with a amr:Person .
+ex:say-01.hearer rdf:type owl:ObjectProperty ;
+    rdfs:label "say-01 hearer" .
