@@ -22,8 +22,8 @@ The repo contains two python scripts (run.py and utils.py). Add your secret key 
     - RQ4: How to plan an evaluation study about the results from the previous questions? [Results at the end]
 
 # Workflow
-![FLIP-KG: Workflow]('./images/workflow.jpg)
-![FLIP-KG: Poem generation]('./images/q3.jpg)
+![FLIP-KG: Workflow](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/7245ff31-5f43-42f3-8a76-045d7ba32b43)
+![FLIP-KG: Generating Poem](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/2d73d771-42e9-4c83-97f4-a61ec5d4379a)
 
 # Evaluation
 
