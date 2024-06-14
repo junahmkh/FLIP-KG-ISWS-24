@@ -31,5 +31,3 @@ For the research question 3 for generating new poem from the generated KG, the w
 
 ![FLIP-KG: Generating Poem](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/8f701d45-8381-4213-8ce9-379112811a31)
 
-# Evaluation
-
