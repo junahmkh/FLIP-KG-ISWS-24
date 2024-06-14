@@ -1,0 +1,123 @@
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ns3: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+
+# Verse 1 Implicature
+fred:moon_1 a fred:Moon .
+fred:pale_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pale-03> ;
+    dul:hasQuality fred:So ;
+    ns3:pale-03.entity-described-as-pale fred:female_1 .
+fred:veil_1 a fred:Veil ;
+    dul:hasQuality fred:Misty ;
+    fred:veilOf fred:female_1 .
+fred:tire_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tire-01> ;
+    boxing:hasTruthValue boxing:Unknown ;
+    ns3:tire-01.tired-entity fred:moon_1 .
+
+# Verse 2 Implicature
+fred:moon_2 a fred:Moon .
+fred:sky_1 a fred:Sky .
+fred:east_1 a fred:East .
+fred:west_1 a fred:West .
+fred:scale_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/scale-01> ;
+    ns3:scale-01.agent fred:female_2 ;
+    ns3:scale-01.amount-changed-by fred:east_1 ;
+    ns3:scale-01.start-point fred:west_1 ;
+    ns3:scale-01.thing-changing-size fred:sky_1 .
+fred:rest_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> ;
+    boxing:hasTruthValue boxing:False ;
+    dul:hasQuality fred:Before ;
+    vn.role:Time fred:come_1 ;
+    ns3:rest-01.agent fred:female_2 .
+
+# Verse 3 Implicature
+fred:show_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/show-01> ;
+    ns3:show-01.shower fred:moon_2 ;
+    ns3:show-01.thing-seen fred:white_1 .
+fred:white_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/white-03> ;
+    dul:hasQuality fred:Papery .
+
+# Verse 4 Implicature
+fred:dawn_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/dawn-01> ;
+    ns3:dawn-01.thing-becoming-known fred:day_1 .
+fred:fade_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/fade-01> ;
+    dul:hasQuality fred:Before ;
+    vn.role:Time fred:dawn_1 ;
+    ns3:fade-01.end-point fred:away_1 ;
+    ns3:fade-01.thing-fading fred:female_3 .
+
+# Additional Ontology Definitions
+fred:Away rdfs:subClassOf dul:Quality,
+    wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-away-adverb-1 .
+fred:Day rdfs:subClassOf dul:Amount,
+    wn30:supersense-noun_time ;
+    owl:equivalentClass wn30:synset-day-noun-1 .
+fred:East rdfs:subClassOf dul:Description,
+    wn30:supersense-noun_relation ;
+    owl:equivalentClass wn30:synset-east-noun-1 .
+fred:Misty rdfs:subClassOf dul:Quality,
+    wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-brumous-adjectivesatellite-1 .
+fred:Night rdfs:subClassOf dul:TimeInterval,
+    wn30:supersense-noun_time ;
+    owl:equivalentClass wn30:synset-night-noun-1 .
+fred:Papery rdfs:subClassOf dul:Quality,
+    fschema:AdjectivalQuality,
+    wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-papery-adjectivesatellite-1 .
+fred:Sky rdfs:subClassOf dul:PhysicalObject,
+    wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-sky-noun-1 .
+fred:So rdfs:subClassOf dul:Quality,
+    wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-so-adverb-1 .
+fred:Veil rdfs:subClassOf dul:PhysicalObject,
+    wn30:supersense-noun_plant ;
+    owl:equivalentClass wn30:synset-veil-noun-2 .
+fred:West rdfs:subClassOf d0:Location,
+    wn30:supersense-noun_location ;
+    owl:equivalentClass wn30:synset-West-noun-1 .
+fred:away_1 a fred:Away .
+fred:come_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/come-01> ;
+    ns3:come-01.entity-in-motion fred:night_1 .
+fred:day_1 a fred:Day .
+fred:female_3 a fred:Female .
+fred:moon_1 a fred:Moon .
+fred:moon_2 a fred:Moon .
+fred:night_1 a fred:Night .
+fred:pale_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pale-03> ;
+    dul:hasQuality fred:So ;
+    ns3:pale-03.entity-described-as-pale fred:female_1 .
+fred:rest_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> ;
+    boxing:hasTruthValue boxing:False ;
+    dul:hasQuality fred:Before ;
+    vn.role:Time fred:come_1 ;
+    ns3:rest-01.agent fred:female_2 .
+fred:scale_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/scale-01> ;
+    ns3:scale-01.agent fred:female_2 ;
+    ns3:scale-01.amount-changed-by fred:east_1 ;
+    ns3:scale-01.start-point fred:west_1 ;
+    ns3:scale-01.thing-changing-size fred:sky_1 .
+fred:sky_1 a fred:Sky .
+fred:veil_1 a fred:Veil ;
+    dul:hasQuality fred:Misty ;
+    fred:veilOf fred:female_1 .
+fred:west_1 a fred:West .
+fred:white_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/white-03> ;
+    dul:hasQuality fred:Papery .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/come-01> rdfs:label "motion" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0033f,
+    va:0060f,
+    va:0504f .
+<https://w3id.org/framester/data/propbank-3.4.

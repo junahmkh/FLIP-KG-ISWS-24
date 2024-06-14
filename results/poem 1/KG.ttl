@@ -1,0 +1,123 @@
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ns3: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fred:lady_1 a fred:Lady .
+
+fred:sit_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/sit-01> ;
+    dul:hasQuality fred:Under ;
+    vn.role:Time fred:cool_1 ;
+    ns3:sit-01.location-or-position fred:tree_1 ;
+    ns3:sit-01.thing-sitting fred:leopard_1 .
+
+fred:white_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/white-03> ;
+    ns3:white-03.thing-that-is-white-in-color fred:leopard_1 .
+
+fred:Day rdfs:subClassOf dul:Amount,
+        wn30:supersense-noun_time ;
+    owl:equivalentClass wn30:synset-day-noun-1 .
+
+fred:JuniperTree dul:associatedWith fred:Juniper ;
+    rdfs:subClassOf fred:Tree .
+
+fred:Lady rdfs:subClassOf dul:Person,
+        wn30:supersense-noun_person ;
+    owl:equivalentClass wn30:synset-lady-noun-1 .
+
+fred:Leopard rdfs:subClassOf dul:Organism,
+        wn30:supersense-noun_animal ;
+    owl:equivalentClass wn30:synset-leopard-noun-2 .
+
+fred:cool_1 a <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/cool-06> ;
+    ns3:cool-06.thing-with-fewer-degrees fred:day_1 .
+
+fred:day_1 a fred:Day .
+
+fred:tree_1 a fred:JuniperTree .
+
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/cool-06> rdfs:label "having a temperature between luke warm and very cold" ;
+    rdfs:subClassOf dul:Event .
+
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/sit-01> rdfs:label "be in a position" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0523f .
+
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/white-03> rdfs:label "the color white" ;
+    rdfs:subClassOf dul:Event .
+
+wn30:synset-day-noun-1 wn30schema:gloss "time for Earth to make a complete rotation on its axis; \"two days later they left\"; \"they put on two performances every day\"; \"there are 30,000 passengers per day\""@en-us .
+
+wn30:synset-lady-noun-1 wn30schema:gloss "a polite name for any woman; \"a nice lady at the library helped me\""@en-us .
+
+wn30:synset-leopard-noun-2 wn30schema:gloss "large feline of African and Asian forests usually having a tawny coat with black spots"@en-us .
+
+fred:leopard_1 a fred:Leopard ;
+    dul:hasDataValue 3.0 ;
+    quant:hasQuantifier quant:multiple .
+
+# Implicatures and their Evaluations
+
+fred:Implicature1 a fred:Implicature ;
+    rdfs:label "The presence of three white leopards is unusual and noteworthy" ;
+    fred:violates fred:Maxim_Quantity, fred:Maxim_Quality, fred:Maxim_Relevance, fred:Maxim_Manner ;
+    fred:hasReasoning fred:Motivation1 .
+
+fred:Motivation1 a fred:Motivation ;
+    rdfs:label "White leopards are rare, suggesting something out of the ordinary or symbolic." .
+
+fred:Maxim_Quantity a fred:Maxim ;
+    rdfs:label "Maxim of Quantity" ;
+    fred:evaluation "Adhered to" .
+
+fred:Maxim_Quality a fred:Maxim ;
+    rdfs:label "Maxim of Quality" ;
+    fred:evaluation "Respected" .
+
+fred:Maxim_Relevance a fred:Maxim ;
+    rdfs:label "Maxim of Relevance" ;
+    fred:evaluation "Respected" .
+
+fred:Maxim_Manner a fred:Maxim ;
+    rdfs:label "Maxim of Manner" ;
+    fred:evaluation "Maintained" .
+
+fred:Implicature2 a fred:Implicature ;
+    rdfs:label "The setting is peaceful and possibly idyllic" ;
+    fred:violates fred:Maxim_Quantity, fred:Maxim_Quality, fred:Maxim_Relevance, fred:Maxim_Manner ;
+    fred:hasReasoning fred:Motivation2 .
+
+fred:Motivation2 a fred:Motivation ;
+    rdfs:label "The phrase 'In the cool of the day' implies a serene and tranquil atmosphere." .
+
+fred:Implicature3 a fred:Implicature ;
+    rdfs:label "The lady is a silent observer or has a special connection to the scene" ;
+    fred:violates fred:Maxim_Quantity, fred:Maxim_Quality, fred:Maxim_Relevance, fred:Maxim_Manner ;
+    fred:hasReasoning fred:Motivation3 .
+
+fred:Motivation3 a fred:Motivation ;
+    rdfs:label "Addressing 'Lady' at the beginning implies she is observing the scene or has a special relationship with the leopards or the setting." .
+
+fred:Maxim_Quantity a fred:Maxim ;
+    rdfs:label "Maxim of Quantity" ;
+    fred:evaluation "Brief, inviting inference" .
+
+fred:Maxim_Quality a fred:Maxim ;
+    rdfs:label "Maxim of Quality" ;
+    fred:evaluation "Adhered to" .
+
+fred:Maxim_Relevance a fred:Maxim ;
+    rdfs:label "Maxim of Relevance" ;
+    fred:evaluation "Adhered to" .
+
+fred:Maxim_Manner a fred:Maxim ;
+    rdfs:label "Maxim of Manner" ;
+    fred:evaluation "Clear but slightly ambiguous" .

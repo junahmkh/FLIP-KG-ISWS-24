@@ -1,0 +1,95 @@
+@prefix amr: <http://www.ontologydesignpatterns.org/ont/amr/> .
+@prefix boxer: <http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ns3: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Mirror and its characteristics
+fred:mirror a amr:Mirror ;
+    dul:isDescribedBy "I am silver and exact. I have no preconceptions."@en ;
+    dul:isDescribedBy "What ever you see I swallow immediately Just as it is, unmisted by love or dislike."@en ;
+    dul:isDescribedBy "I am not cruel, only truthful—"@en ;
+    dul:isDescribedBy "The eye of a little god, four-cornered."@en ;
+    dul:isDescribedBy "Most of the time I meditate on the opposite wall. It is pink, with speckles."@en ;
+    dul:isDescribedBy "I have looked at it so long I think it is a part of my heart. But it flickers."@en ;
+    dul:isDescribedBy "Faces and darkness separate us over and over."@en ;
+    dul:isDescribedBy "Now I am a lake."@en .
+
+# Implicatures
+fred:implicature_1 a amr:Implicature ;
+    amr:hasContent "The mirror claims to be objective and unbiased in its reflection."@en ;
+    amr:motivation "This implicates that the mirror does not distort or alter the image it reflects, implying a commitment to truthfulness and accuracy."@en .
+
+fred:implicature_2 a amr:Implicature ;
+    amr:hasContent "The mirror reflects without any subjective influence."@en ;
+    amr:motivation "By stating it swallows whatever it sees without bias, it implicates that its reflections are purely factual and not colored by emotions or preferences."@en .
+
+fred:implicature_3 a amr:Implicature ;
+    amr:hasContent "The mirror's truthfulness is emphasized over any perception of cruelty."@en ;
+    amr:motivation "This suggests that while the mirror may show unpleasant truths, it does so without malice, adhering strictly to accuracy."@en .
+
+fred:implicature_4 a amr:Implicature ;
+    amr:hasContent "The mirror is likened to a god-like observer, all-seeing and comprehensive."@en ;
+    amr:motivation "This implicates the mirror's comprehensive and detailed nature in observing everything within its view, reinforcing its role as an impartial observer."@en .
+
+fred:implicature_5 a amr:Implicature ;
+    amr:hasContent "The mirror spends much of its time reflecting on a specific opposite wall."@en ;
+    amr:motivation "This implicates a familiarity or fixation with this particular image, suggesting a habitual or constant observation."@en .
+
+fred:implicature_6 a amr:Implicature ;
+    amr:hasContent "The mirror's deep observation of the wall has led to an emotional connection, though it's not perfect."@en ;
+    amr:motivation "This suggests a blend of emotional attachment (seeing it as part of itself) and acknowledgment of imperfection (the flickering), implying a nuanced relationship with its reflections."@en .
+
+fred:implicature_7 a amr:Implicature ;
+    amr:hasContent "The mirror is separated from what it reflects by the presence of faces and darkness."@en ;
+    amr:motivation "This suggests that what the mirror reflects (faces) and what it is (a mirror) are fundamentally different, highlighting a barrier or distinction between reality and reflection."@en .
+
+fred:implicature_8 a amr:Implicature ;
+    amr:hasContent "The mirror now metaphorically sees itself as a lake, possibly implying depth or expansiveness."@en ;
+    amr:motivation "This metaphorical transformation suggests a change in perspective or state, potentially indicating a shift in how the mirror sees itself or its role."@en .
+
+# Classes and Individuals
+fred:Mirror a owl:Class ;
+    rdfs:label "Mirror" .
+
+amr:Implicature a owl:Class ;
+    rdfs:label "Implicature" .
+
+# Properties
+amr:hasContent a owl:ObjectProperty ;
+    rdfs:label "hasContent" ;
+    rdfs:domain amr:Implicature ;
+    rdfs:range xsd:string .
+
+amr:motivation a owl:ObjectProperty ;
+    rdfs:label "motivation" ;
+    rdfs:domain amr:Implicature ;
+    rdfs:range xsd:string .
+
+dul:isDescribedBy a owl:ObjectProperty ;
+    rdfs:label "isDescribedBy" ;
+    rdfs:domain fred:Mirror ;
+    rdfs:range xsd:string .
+
+# Instances
+fred:mirrorInstance a fred:Mirror ;
+    dul:isDescribedBy fred:implicature_1,
+        fred:implicature_2,
+        fred:implicature_3,
+        fred:implicature_4,
+        fred:implicature_5,
+        fred:implicature_6,
+        fred:implicature_7,
+        fred:implicature_8 .
+

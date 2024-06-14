@@ -1,0 +1,46 @@
+@prefix amr: <http://www.ontologydesignpatterns.org/ont/amr/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ns3: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+
+fred:joy_1 ns3:give-01 fred:light_1 .
+fred:light_1 a fred:StarLight .
+fred:light_1 rdfs:subClassOf fred:Light .
+
+fred:conjunct_3 dul:hasMember fred:calf_1, fred:lamb_1 ;
+               fred:with fred:knee_3 .
+
+fred:knee_3 a fred:Knee .
+fred:calf_1 a fred:Calf .
+fred:lamb_1 a fred:Lamb .
+
+fred:think_1 boxing:hasTruthValue boxing:False ;
+            ns3:think-01.thinker fred:bird_1 ;
+            ns3:think-01.thought fred:conjunct_4 .
+
+fred:bird_1 a fred:Bird .
+fred:song_1 a fred:Song .
+fred:enjoy_1 ns3:enjoy-01.enjoyer fred:bird_1 ;
+            ns3:enjoy-01.thing-enjoyed fred:song_1 .
+
+fred:see_1 ns3:see-01.thing-viewed fred:wind_1 ;
+          ns3:see-01.viewer fred:person_1 .
+
+fred:drag_1 ns3:drag-01.dragger fred:female_1 ;
+           ns3:drag-01.thing-dragged fred:corn_1 .
+
+fred:wind_1 a fred:Wind .
+fred:female_1 a fred:Female .
+fred:corn_1 a fred:Corn .
+fred:hair_1 a fred:Hair ;
+          dul:hasQuality fred:Golden .
+fred:wood_1 dul:hasQuality fred:Lonely .
