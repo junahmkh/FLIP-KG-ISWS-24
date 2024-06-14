@@ -14,7 +14,9 @@ FLIP-KG utilizes the machine reading tool "AMR2FRED" which reads text and perfor
 The repo contains two python scripts (run.py and utils.py). Add your secret key for Chat-gpt API in the utils.py file. The subfolder "Poem" contains the five poems used for evaluation of the proposed framework. 
 
 - Open a terminal in the repository
-- write: python run.py {poem_id} {research_question_id}; where: poem_id = {1,2,3,4,5} and research_question_id = {1,2,3}.
+- write: python run.py {poem_id} {research_question_id};
+     - where: poem_id = {1,2,3,4,5}
+     - research_question_id = {1,2,3}
 - Research Questions:
     - RQ1: Are existing LLMs good at interpreting implicatures in poetry?
     - RQ2: Can LLMs generate implicature knowledge graphs from a poem?
@@ -22,8 +24,12 @@ The repo contains two python scripts (run.py and utils.py). Add your secret key 
     - RQ4: How to plan an evaluation study about the results from the previous questions? [Results at the end]
 
 # Workflow
-![FLIP-KG: Workflow]('./images/workflow.jpg)
-![FLIP-KG: Poem generation]('./images/q3.jpg)
+![FLIP-KG: Workflow](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/7245ff31-5f43-42f3-8a76-045d7ba32b43)
+
+For the research question 3 for generating new poem from the generated KG, the workflow is defined in the following image:
+
+
+![FLIP-KG: Generating Poem](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/8f701d45-8381-4213-8ce9-379112811a31)
 
 # Evaluation
 
