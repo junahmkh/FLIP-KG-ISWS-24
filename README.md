@@ -21,5 +21,9 @@ The repo contains two python scripts (run.py and utils.py). Add your secret key 
     - RQ3: Can we use LLMs to generate an interesting poem, when giving an implicature-intensive story to them?
     - RQ4: How to plan an evaluation study about the results from the previous questions? [Results at the end]
 
+# Workflow
+![FLIP-KG: Workflow]('images/workflow.jpg)
+![FLIP-KG: Poem generation]('images/q3.jpg)
+
 # Evaluation
 
