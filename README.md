@@ -23,7 +23,7 @@ The repo contains two python scripts (run.py and utils.py). Add your secret key 
 
 # Workflow
 ![FLIP-KG: Workflow](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/7245ff31-5f43-42f3-8a76-045d7ba32b43)
-![FLIP-KG: Generating Poem](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/2d73d771-42e9-4c83-97f4-a61ec5d4379a)
+![FLIP-KG: Generating Poem](https://github.com/junahmkh/FLIP-KG-ISWS-24/assets/103508915/dc9d0aa6-c489-4cfa-87e8-d9fe9b8d53fd)
 
 # Evaluation
 
